@@ -6,3 +6,5 @@
 4. in jsx(react app.js ) whatever written in { } is the javascript
 5.we dont use href="#" in react we use href="/" in react . we use react router in it
 6.when creating components ..always write its name in capital letters
+7. in javascript and react we can use the css properties but we dont have to use the "-" and have to use the camel case. for exmmple. in css we use background-color:" ".. so in react and js we write this as backgroundColor:' '
+8.to change in the JSX we use prop. to change in the Webchange we use State
