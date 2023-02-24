@@ -18,6 +18,12 @@ export default function (props) {
         let newText = text.toLowerCase();
         setText(newText)
     }
+    const handleClearClick = () => {
+        
+        let newText =" ";
+        setText(newText)
+    }
+    
     // when whe handle on chnage funtion is triggerd  the object event is created.
     const handleOnChange = (event) => {
         // console.log('on Change'); it is not necessary to include this. it is just for our understanding and debugging
@@ -29,8 +35,8 @@ export default function (props) {
     // here we are using the destruting the array const[text,setText]
     // here the default value of text  is "enter the text here2" which is the initial state of the text,its next text will be changed through setText.
     // text and setText are the state variables.state variable are the variables,which react will automatically watch
-    // const [text, setText] = useState('Enter the text here2') ; we have enterd here text default. this is just for out understanding
-    const [text, setText] = useState('Enter the text here2')
+    // const [text, setText] = useState('Enter the text here2') ; we have enterd here text default. this is just for out understanding. we can remove it
+    const [text, setText] = useState('')
     return (
         // this below written is the jsx fragment
         <>
@@ -43,6 +49,7 @@ export default function (props) {
                 {/* onlick event will fire this below funtions */}
                 <button className="btn btn-primary" onClick={handleUpClick}>Convert to Upper case</button>
                 <button className="btn btn-primary mx-3" onClick={handleLoClick}>Convert to Lower case</button>
+                <button className="btn btn-primary mx-3" onClick={handleClearClick}>Clear</button>
             </div>
             <div className="container my-2">
                 <h2>Your text summary</h2>
