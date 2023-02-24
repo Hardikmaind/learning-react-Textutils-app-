@@ -1,0 +1,8 @@
+1.in jsx(react app.js funtion) all the class  in html are called as className. and in html's label for is called as forId.
+2.in jsx(react app.js funtion) we have to include the closing tag for all the elements which dont have closing tag in html for example
+	<hr> tag in html. in jsx(react) this tag is written as <hr	_content_	/>	in this way.if any tag doesnt has a closing tag
+	we close that tag in this way.more ex are img tag ,input tag etc  
+3. in jsx. everything should be under the single element, for example , we can club evertyhing in the function in <div> </div> or <> </>
+4. in jsx(react app.js ) whatever written in { } is the javascript
+5.we dont use href="#" in react we use href="/" in react . we use react router in it
+6.when creating components ..always write its name in capital letters
