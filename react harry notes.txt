@@ -1,4 +1,4 @@
-1.in jsx(react app.js funtion) all the class  in html are called as className. and in html's label for is called as forId.
+1.in jsx(react app.js funtion) all the class  in html are called as className. and in html's label for is called as htmlFor.
 2.in jsx(react app.js funtion) we have to include the closing tag for all the elements which dont have closing tag in html for example
 	<hr> tag in html. in jsx(react) this tag is written as <hr	_content_	/>	in this way.if any tag doesnt has a closing tag
 	we close that tag in this way.more ex are img tag ,input tag etc  

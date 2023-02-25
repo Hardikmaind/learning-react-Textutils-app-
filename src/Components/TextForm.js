@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default function (props) {
+export default function TextForm(props) {
 
     const handleUpClick = () => {
         // console.log('upper case was clicked '+ text);  it is not necessary to include this. it is just for our understanding and debugging
@@ -18,24 +18,24 @@ export default function (props) {
         let newText = text.toLowerCase();
         setText(newText)
     }
-    const handleCopy=()=>{
-        let text=document.getElementById("myBox");
+    const handleCopy = () => {
+        let text = document.getElementById("myBox");
         text.select();
         // text.setSelectionRange(0,9999);
         navigator.clipboard.writeText(text.value);
 
     }
-    const handleExtraSpaces=()=>{
+    const handleExtraSpaces = () => {
         // this will remove  extraspaces...in this rejudx is used   
-        let newText=text.split(/[ ]+/);
+        let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
     }
     const handleClearClick = () => {
-        
-        let newText =" ";
+
+        let newText = " ";
         setText(newText)
     }
-    
+
     // when whe handle on chnage funtion is triggerd  the object event is created.
     const handleOnChange = (event) => {
         // console.log('on Change'); it is not necessary to include this. it is just for our understanding and debugging
@@ -52,11 +52,12 @@ export default function (props) {
     return (
         // this below written is the jsx fragment
         <>
-            <div className='container'>
-                <h1>{props.heading}</h1>
+            <div className='container'  style={{color:props.specifymode==='dark'?'white':'#042743'}} >
+                <h1>{props.heading}</h1>  
                 <div className="mb-3">
                     {/* onchange event will fire this below funtion.it is necessary to include this event cause if we not include it we will not be able to change the state of the state variavle "state" once it is changed . also it becomes necessary to update the state variable 'text' in  value="text" jaise hi koi type kare */}
-                    <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="10"></textarea>
+                    {/* this style funtion has 1 bracket(outer) for JS and 1 bracket for writing object(inner)*/}
+                    <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.specifymode==='dark'?'grey':'white',color:props.specifymode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
                 </div>
                 {/* onlick event will fire this below funtions */}
                 <button className="btn btn-primary" onClick={handleUpClick}>Convert to Upper case</button>
@@ -65,14 +66,14 @@ export default function (props) {
                 <button className="btn btn-primary mx-3" onClick={handleCopy}>Copy</button>
                 <button className="btn btn-primary mx-3" onClick={handleExtraSpaces}>remove extra space</button>
             </div>
-            <div className="container my-2">
+            <div className="container my-2" style={{color:props.specifymode==='dark'?'white':'#042743'}} >
                 <h2>Your text summary</h2>
                 {/* text.split() functions split an string with the particular separator in this case space and returns it as an array */}
                 <p>{text.split(" ").length} words, {text.length} characters</p>
                 {/* since 0.008 minutes req to read one word */}
                 <p>{0.008 * (text.split(" ").length)} Minutes read</p>
                 <h2>preview</h2>
-                <p>{text}</p>
+                <p>{text.length>0?text:"enter your text above to preview"}</p>
             </div>
         </>
     )

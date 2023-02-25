@@ -3,17 +3,45 @@ import './App.css';
 // import About from './Components/About';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
+// imrs keyword short cut for below
+import { useState } from 'react';
 
 function App() {
+  // i want app.js to have the control
+
+
+  // dark mode enabled hain ya nahi main yeh yaha se control kar sakta.
+  const [mode, setMode] = useState('light') //whether dark mode is enabled or not.
+
+  const togglemode = ()=>{
+    if(mode ==='light'){
+      setMode('dark')
+
+      //now the problem arise that when we set the dark mode to on..we are not able to see the text form's text. so we have to declare it as a state varabel 
+
+
+      // this also changes the color of the body. this line means that document mein(means webpage) body ka style(css) backgorundColor #042743 kardo
+      document.body.style.backgroundColor='#042743'
+    }
+    else{
+      setMode('light')
+      // this also changes the color of the body. this line means that document mein(means webpage) body ka style(css) backgorundColor white kardo
+      document.body.style.backgroundColor='white'
+    }
+  }
+
+
+
   return (
     <>
 
     {/* when something is passed default values wont be shown. when nothing is shown default value will be shown */}
     {/* <Navbar title="Welcome" aboutText='loda lehsun'/> */}
-    <Navbar title="Textutils" />
+    {/* here specifymode and the toggle  are the funtions and their values are the props passed into the navbar */}
+    <Navbar title="Textutils"  specifymode={mode} toggle={togglemode}/>
     {/* <Navbar/> */}
     <div className="container my-3">
-    <TextForm heading="Enter the text to analyze below: "/>
+    <TextForm heading="Enter the text to analyze below: " specifymode={mode}/>
     {/* <About/> */}
     </div>
 
