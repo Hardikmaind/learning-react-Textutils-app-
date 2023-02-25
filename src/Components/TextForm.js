@@ -11,29 +11,34 @@ export default function TextForm(props) {
         // this change the present state of "text" which in default was "enter the text here2" when you click the button it will change from "enter the text here2" to "you have clicked on  handle up click"
         let newText = text.toUpperCase();
         setText(newText)
+        props.alert_message("text has been capitailize","success")
     }
     const handleLoClick = () => {
         // console.log('Lower case was clicked '+ text);  it is not necessary to include this. it is just for our understanding and debugging
         // this change the present state of "text" which in default was "enter the text here2" when you click the button it will change from "enter the text here2" to "you have clicked on  handle low click"
         let newText = text.toLowerCase();
         setText(newText)
+        props.alert_message("text has been converted to lowercase","success")
     }
     const handleCopy = () => {
         let text = document.getElementById("myBox");
         text.select();
         // text.setSelectionRange(0,9999);
         navigator.clipboard.writeText(text.value);
-
+        props.alert_message("text has been copied","success")
+        
     }
     const handleExtraSpaces = () => {
         // this will remove  extraspaces...in this rejudx is used   
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
+        props.alert_message("extraspaces has been removed","success")
     }
     const handleClearClick = () => {
-
+        
         let newText = " ";
         setText(newText)
+        props.alert_message("text has been cleared","success")
     }
 
     // when whe handle on chnage funtion is triggerd  the object event is created.
@@ -42,6 +47,7 @@ export default function TextForm(props) {
         // this changes the present state of the our "text" to another. and 
         setText(event.target.value)
         console.log(" ")
+        
     }
 
     // here we are using the destruting the array const[text,setText]

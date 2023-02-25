@@ -8,3 +8,4 @@
 6.when creating components ..always write its name in capital letters
 7. in javascript and react we can use the css properties but we dont have to use the "-" and have to use the camel case. for exmmple. in css we use background-color:" ".. so in react and js we write this as backgroundColor:' '
 8.to change in the JSX we use prop. to change in the Webchange we use State
+9. write JavaScript in the { } and if we have to use string template  then use backticks(` `). so when we have to use both javascript and  and string template we write it as {`           ${item}      `}	here item is the fill in the blank or we can say template. in item anything can be added with the help of props
