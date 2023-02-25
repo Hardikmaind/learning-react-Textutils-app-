@@ -12,11 +12,12 @@ export default function About() {
 
     // so in the useState("here will be the initial state of the style/page" )
     const [mystyle, setmystyle] = useState({
+        // this is the initial state of the mystyle
         color: 'black',
         backgroundColor: 'white',
         
     })
-    const [btntext, setbtntext] = useState('enable dark mode')
+    const [btntext, setbtntext] = useState('enable dark mode'  )//enable dark state is the initial state of the button
     const enabledarkmode = () => {
         if (mystyle.color === 'black') {
             setmystyle({
