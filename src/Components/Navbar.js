@@ -3,7 +3,7 @@
 import React from "react";
 // impt keyword for importing prop types
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -15,14 +15,14 @@ export default function Navbar(props) {
       <div className="container-fluid">
         {/* this props.title passes our title in the  app.js when we include it in in Navbar component. it is written in "{ }" because it is the javascript and js is always written in curlly brackets */}
         {/* since by using the <a> href=" "</a>  and after clicking the props.title here textUtils the whole page is reloading so we will be changeing the <a></a> to <Link><Link/> so that whole page would not get reloaded and only the below componet would appear*/}
-        {/* <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/">
           {props.title}
-        </a> */}
+        </a>
 
         
-        <Link className="navbar-brand" to="/">
+        {/* <Link className="navbar-brand" to="/">
           {props.title}
-        </Link>
+        </Link> */}
 
 
         <button
@@ -41,21 +41,21 @@ export default function Navbar(props) {
             <li className="nav-item">
               {/* We could have also just use <a></a>  and href ,but it would reload the whole page and we dont want that */}
 
-              {/* <a className="nav-link active" aria-current="page" href="/">
+              <a className="nav-link active" aria-current="page" href="/">
                 Home
-              </a> */}
-              <Link className="nav-link active" aria-current="page" to="/">
+              </a>
+              {/* <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </Link>
+              </Link> */}
             </li>
             <li className="nav-item">
-              {/* <a className="nav-link" href="/">
+              <a className="nav-link" href="/">
                 {props.aboutText}
-              </a> */}
+              </a>
               {/* since we have specifically entered the /about in to in below <Link><Link/> and in <Route path=" /about"/>  in the App.js , it will get us to the Above.js component  */}
-              <Link className="nav-link" to="/about">
+              {/* <Link className="nav-link" to="/about">
                 {props.aboutText}
-              </Link>
+              </Link> */}
             </li>
           </ul>
           {/* here text-light will give the white color t our text  */}

@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
 
 import "./App.css";
-import About from "./Components/About";
+// import About from "./Components/About";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 // imrs keyword short cut for below
 import { useState } from "react";
 import Alert from "./Components/Alert";
 // since we have imported Browser Router as Router then we have to enclose all the <Routes/> in <Router> </Router>. if we directly import BrowserRouter then we have to enclose <Routes/> in <BrowserRouter> </BrowserRouter>
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+// removed since routing client doesnt work good with the github deploymemt
+
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   // i want app.js to have the control
@@ -70,7 +73,7 @@ function App() {
     <>
       {/*  in <Router></Router> we write <Routes> </Routes> in this we write <Route path=" /about " element={<About/>}/> to go to About.js from the home page/App.js . also we need to Link the route path in this file(App,js) to the Navbar.js by writing <Link> <Link/> instead of <a></a> , and in <Link> <Link/> we have to add " to" instead of href. also keep in my that path in <Route/> and in "to" in <Link> <Link/> should be same to take affect. We could have also just use <a></a>  and href ,but it would reload the whole page and we dont want that*/}
 
-      <Router>
+      {/* <Router> */}
         {/* when something is passed default values wont be shown. when nothing is shown default value will be shown */}
         {/* <Navbar title="Welcome" aboutText='loda lehsun'/> */}
         {/* here specifymode and the toggle  are the funtions and their values are the props passed into the navbar */}
@@ -81,25 +84,25 @@ function App() {
         <Alert alert_message={alert} />
 
         <div className="container my-3">
-          <Routes>
+          {/* <Routes> */}
           {/* when we write the word exact react uses the exact matching of the path pr it uses the partial matching for example                                                                            consider the two paths /users-->Component1
                                 /users/home-->-->Component2
           so here if dont write the exact path the react will let us to the component1 only and not to the component2 where we want to go. so sometime it becomes necessary to write the exact path */}
-            <Route exact path="/about" element={<About />} />
+            {/* <Route exact path="/about" element={<About />} /> */}
 
-            <Route
+            {/* <Route
               path="/"
-              element={
+              element={ */}
                 <TextForm
                   alert_message={showAlert}
                   heading="Enter the text to analyze below: "
                   specifymode={mode}
-                />
-              }
+              //   />
+              // }
             />
-          </Routes>
+          {/* </Routes> */}
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
