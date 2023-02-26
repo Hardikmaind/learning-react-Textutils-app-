@@ -49,12 +49,27 @@ function App() {
       
       // this also changes the color of the body. this line means that document mein(means webpage) body ka style(css) backgorundColor #042743 kardo
       document.body.style.backgroundColor='#042743'
+
+      // when this funtions gets called/executed i.e when dark mode is enabled ...webpage title will be change
+      // in this way we have accessed the css...document.title means doucment ka titile ye rakh diya
+      document.title="TextUtils -Dark Mode"
+
+
+      // this changes the title of the webchange frequently
+      // setInterval(() => {
+      //   document.title="TextUtils is amazing"
+      // }, 2000);
+      // setInterval(() => {
+      //   document.title="install text utils now"
+        
+      // }, 750);
     }
     else{
       setMode('light')
       // this also changes the color of the body. this line means that document mein(means webpage) body ka style(css) backgorundColor white kardo
       document.body.style.backgroundColor='white'
       showAlert("light mode has been enabled","success")
+      document.title="TextUtils -Light Mode"
     }
   }
 

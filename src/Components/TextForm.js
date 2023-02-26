@@ -3,6 +3,10 @@
 // this {useState} is a Hook. this useState hook helps us in making the hook
 import React, { useState } from 'react'
 
+// let title="this is some heading"
+
+// now i have create here title variable . i want to show it as h1 heading . so we have to put this title variable inside the <h1> </h1> tags like this <h1> title</h1>. but after doing this it will show written only title in h1 and not"this is some heading". since we are writing <h1> title</h1> inside the funtion Textform(props) we should be writing it like this <h1>{title}</h1>.in this way "this is someheading" will be shown in h1 heading. why? because whatever written inside the funtions should be as a JSX element then only it will get evaluated
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function TextForm(props) {
 
@@ -59,6 +63,7 @@ export default function TextForm(props) {
         // this below written is the jsx fragment
         <>
             <div className='container'  style={{color:props.specifymode==='dark'?'white':'#042743'}} >
+            {/* if we do not include propos.heading inside the { } then "props.heading" will be shown as the heading and not the actual heading which is passed with the help of props(WITHOUT THE { } IT WILL BE CONSIDERED AS JUST THE HTML ELEMENT).since it is JSX element is is mandetory to write it inside the {} brackets or the react will not be able to differentiate between html element and JSX element."*/}
                 <h1>{props.heading}</h1>  
                 <div className="mb-3">
                     {/* onchange event will fire this below funtion.it is necessary to include this event cause if we not include it we will not be able to change the state of the state variavle "state" once it is changed . also it becomes necessary to update the state variable 'text' in  value="text" jaise hi koi type kare */}
