@@ -58,6 +58,21 @@ export default function Navbar(props) {
               </Link>
             </li>
           </ul>
+
+                {/* rang b rangin toggle mode buttons in nav bar */}
+
+              <div className="d-flex">
+                                                        {/* onlick needs the funtion and not the funtion call .below written will directly call the funtion.below written is the funtion call */}
+                {/* <div className="bg-primary rounded mx-2" onClick={props.toggle('primary')} style={{height:'30px',width:'30px',}}></div> */}
+                                                      {/* since funtion is only require and not the funtion call, so we write the funtion in it(arrow funtion) . this primary will be passed to the "cls" parameter in funtion written in the App.js to */}
+                <div className="bg-primary rounded mx-2" onClick={()=>{props.toggle('primary')}} style={{height:'30px',width:'30px',cursor:'pointer'}}></div>
+                <div className="bg-danger rounded mx-2" onClick={()=>{props.toggle('danger')}} style={{height:'30px',width:'30px',cursor:'pointer'}}></div>
+                <div className="bg-success rounded mx-2" onClick={()=>{props.toggle('success')}} style={{height:'30px',width:'30px',cursor:'pointer'}}></div>
+                <div className="bg-warning rounded mx-2" onClick={()=>{props.toggle('warning')}} style={{height:'30px',width:'30px',cursor:'pointer'}}></div>
+
+              </div>
+
+
           {/* here text-light will give the white color t our text  */}
           {/* used the terinary operator here to add some condition on the props.specifymode. the condition says that if the mode is light then do it dark and vice vers. it only affects the text color..from dark to light */}
           <div
@@ -69,7 +84,7 @@ export default function Navbar(props) {
               className="form-check-label"
               htmlFor="flexSwitchCheckDefault"
             >
-              Enable dark mode
+              Toggle Mode
             </label>
             <input
               className="form-check-input"

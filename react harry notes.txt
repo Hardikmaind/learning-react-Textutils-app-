@@ -12,3 +12,4 @@
 10.whatever written inside the funtions should be as a JSX element. JSX=(html+javascript)
 11.all components name in react must be capitalized because react differentiates between capitalized and non capitalized component name, because react treats lower case components as regular html elements, capitalizing first react letter helps react distinghuish btween regular html and JSX elements
 12.{/* now see the style below. to include the style in jsx, Javascipt epressions are written inside curly braces and since javascript objects also use curly braces, the styling in the example above is written inside the  two sets of curly braces.we could have directly added the the style with just one curly bracket if we had passed the the object which has css written in it. */}
+13.onClick need the funtion and not the funtion call
