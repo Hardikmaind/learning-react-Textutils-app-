@@ -1,0 +1,4 @@
+.accordion-button::after{
+    /* this will invert the arrows in the accordion .which performs the dropdown */
+    filter: invert(1);
+}

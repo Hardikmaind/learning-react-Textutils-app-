@@ -27,12 +27,14 @@ export default function TextForm(props) {
         props.alert_message("text has been converted to lowercase","success")
     }
     const handleCopy = () => {
-        let text = document.getElementById("myBox");
-        text.select();
+        // since we have used the navigator api  we dont need to use the let text = document.getElementById("myBox");,text.select(); document.getSelection().removeAllRanges();
+        // let text = document.getElementById("myBox");
+        // text.select();
         // text.setSelectionRange(0,9999);
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         // beacuse of below after copying , out text doenst get selected 
-        document.getSelection().removeAllRanges();
+
+        // document.getSelection().removeAllRanges();
         props.alert_message("text has been copied","success")
 
         
@@ -90,7 +92,9 @@ export default function TextForm(props) {
                 <h2>Your text summary</h2>
                 {/* text.split() functions split an string with the particular separator in this case space and returns it as an array */}
                 {/* here  filter funtions filter the string whose lenght is not equal to zero and only split those strings */}
-                <p>{text.split(" ").filter((element)=>{ return element.length!==0}).length} words, {text.length} characters</p>
+                {/* <p>{text.split(" ").filter((element)=>{ return element.length!==0}).length} words, {text.length} characters</p>
+                this is done so that when enter is pressed nothing happens and our code runs properly. this is part of the regular expression in JS */}
+                <p>{text.split(/\s+/ ).filter((element)=>{ return element.length!==0}).length} words, {text.length} characters</p>
                 {/* since 0.008 minutes req to read one word */}
                 <p>{0.008 * (text.split(" ").filter((element)=>{ return element.length!==0}).length)} Minutes read</p>
                 <h2>preview</h2>

@@ -34,22 +34,11 @@ function App() {
   // dark mode enabled hain ya nahi main yeh yaha se control kar sakta.
   const [mode, setMode] = useState("light"); //whether dark mode is enabled or not.
 
-  const removeBodyClasses=()=>{
-    document.body.classList.remove('bg-light')
-    document.body.classList.remove('bg-dark')
-    document.body.classList.remove('bg-succes')
-    document.body.classList.remove('bg-warning')
-    document.body.classList.remove('bg-danger')
-  }
-
-  const togglemode = (cls) => {
-    removeBodyClasses();
-    console.log(cls)
-    document.body.classList.add('bg-'+cls)
+  const togglemode = () => {
     if (mode === "light") {
       setMode("dark");
       // here success type alert is shown which is green in color
-      showAlert(cls+" mode has been enabled", "success");
+      showAlert("dark mode has been enabled", "success");
 
       //now the problem arise that when we set the dark mode to on..we are not able to see the text form's text. so we have to declare it as a state varabel
 
