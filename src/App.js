@@ -47,7 +47,7 @@ function App() {
 
       // when this funtions gets called/executed i.e when dark mode is enabled ...webpage title will be change
       // in this way we have accessed the css...document.title means doucment ka titile ye rakh diya
-      document.title = "TextUtils -Dark Mode";
+      // document.title = "TextUtils -Dark Mode";
 
       // this changes the title of the webchange frequently
       // setInterval(() => {
@@ -62,7 +62,7 @@ function App() {
       // this also changes the color of the body. this line means that document mein(means webpage) body ka style(css) backgorundColor white kardo
       document.body.style.backgroundColor = "white";
       showAlert("light mode has been enabled", "success");
-      document.title = "TextUtils -Light Mode";
+      // document.title = "TextUtils -Light Mode";
     }
   };
 
@@ -85,14 +85,14 @@ function App() {
           {/* when we write the word exact react uses the exact matching of the path pr it uses the partial matching for example                                                                            consider the two paths /users-->Component1
                                 /users/home-->-->Component2
           so here if dont write the exact path the react will let us to the component1 only and not to the component2 where we want to go. so sometime it becomes necessary to write the exact path */}
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/about" element={<About specifymode={mode} />} />
 
             <Route
               path="/"
               element={
                 <TextForm
                   alert_message={showAlert}
-                  heading="Enter the text to analyze below: "
+                  heading="Try TextUtils - word counter, character counter, remove extra spaces :"
                   specifymode={mode}
                 />
               }

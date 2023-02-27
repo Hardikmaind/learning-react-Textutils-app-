@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
 
-export default function About() {
+export default function About(props) {
 
     //in this way we have included the  style in JSX.it is kind of object only
     // let mystyle={   
@@ -11,44 +11,63 @@ export default function About() {
 
 
     // so in the useState("here will be the initial state of the style/page" )
-    const [mystyle, setmystyle] = useState({
-        // this is the initial state of the mystyle
-        color: 'black',
-        backgroundColor: 'white',
+    // const [mystyle, setmystyle] = useState({
+    //     // this is the initial state of the mystyle
+    //     color: 'black',
+    //     backgroundColor: 'white',
         
-    })
-    const [btntext, setbtntext] = useState('enable dark mode'  )//enable dark state is the initial state of the button
-    const enabledarkmode = () => {
-        if (mystyle.color === 'black') {
-            setmystyle({
-                color: 'white',
-                backgroundColor: 'black',
-                border:'1px solid white'
+    // })
 
-            })
-            setbtntext('enable light mode')
-        }
-        else {
-            setmystyle({
-                color: 'black',
-                backgroundColor: 'white'
 
-            })
-            setbtntext('enable dark mode')
+    //since removed the dark button i have added here my style object  in that keys get the values passwith the help of props form the app .js
+    let mystyle={
+        color: props.specifymode==='dark'?'white':'#042743',
 
-        }
+        backgroundColor:props.specifymode==='dark'? 'rgb(36, 74, 104)':'white',
+        
     }
+
+
+
+
+
+
+
+
+    //comment the about us ka dark button 
+
+    // const [btntext, setbtntext] = useState('enable dark mode'  )//enable dark state is the initial state of the button
+    // const enabledarkmode = () => {
+    //     if (mystyle.color === 'black') {
+    //         setmystyle({
+    //             color: 'white',
+    //             backgroundColor: 'black',
+    //             border:'1px solid white'
+
+    //         })
+    //         setbtntext('enable light mode')
+    //     }
+    //     else {
+    //         setmystyle({
+    //             color: 'black',
+    //             backgroundColor: 'white'
+
+    //         })
+    //         setbtntext('enable dark mode')
+
+    //     }
+    // }
 
 
 
     return (
         // this is how we include the stylesheet in the JSX
-        <div className="container" style={mystyle}>
+        <div className="container" style={{color: props.specifymode==='dark'?'white':'#042743'}}>
             <h1 className='my-3'>About us</h1>
             <div className="accordion" id="accordionExample" >
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
-                        <button className="accordion-button" type="button " data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={mystyle}>
+                        <button className="accordion-button" type="button " data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={mystyle} >
                             Accordion Item #1
                         </button>
                     </h2>
@@ -85,7 +104,7 @@ export default function About() {
             </div>
             <div className="container my-2" >
 
-                <button type='buttom' className='btn btn-primary ' onClick={enabledarkmode}>{btntext}</button>
+                {/* <button type='buttom' className='btn btn-primary ' onClick={enabledarkmode}>{btntext}</button> */}
             </div>
         </div>
     )

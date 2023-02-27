@@ -19,7 +19,7 @@ export default function Navbar(props) {
           {props.title}
         </a> */}
 
-        
+
         <Link className="navbar-brand" to="/">
           {props.title}
         </Link>
@@ -61,9 +61,8 @@ export default function Navbar(props) {
           {/* here text-light will give the white color t our text  */}
           {/* used the terinary operator here to add some condition on the props.specifymode. the condition says that if the mode is light then do it dark and vice vers. it only affects the text color..from dark to light */}
           <div
-            className={`form-check form-switch text-${
-              props.specifymode === "light" ? "dark" : "light"
-            } mx-4`}
+            className={`form-check form-switch text-${props.specifymode === "light" ? "dark" : "light"
+              } mx-4`}
           >
             {/* put htmlFor instead of for in JSX */}
             <label
